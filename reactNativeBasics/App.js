@@ -2,12 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import {createDrawerNavigator} from '@react-navigation/drawer'
-import HomeScreen from './screens/HomeScreen';
+import Home from './screens/HomeScreen';
 import About from './screens/About';
+import ProductDetail from './screens/ProductDetail';
 import CustomDrawer from './screens/CustomDrawer';
-import ListScreen from './screens/ListScreen';
-import RegisterScreen from './screens/RegisterScreen';
-
 
 const {Navigator,Screen} = createDrawerNavigator()
 
@@ -28,10 +26,9 @@ export default function App() {
         headerTintColor : 'blue'
       }}
       >
-        <Screen name='home' component={HomeScreen}  />
+        <Screen name='home' component={Home}  />
         <Screen name='about' component={About} />
-        <Screen name='listscreen' component={ListScreen} />
-        <Screen name='registerscreen' component={RegisterScreen} />
+        <Screen name="details" component={ProductDetail} options={{drawerItemStyle : {height : 0}}} />
      
       </Navigator>
     </NavigationContainer>
