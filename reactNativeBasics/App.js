@@ -1,11 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+// We are using reaction navigation to navigate
 import {NavigationContainer} from '@react-navigation/native'
+// We are using createDrawerNavigator
 import {createDrawerNavigator} from '@react-navigation/drawer'
 import Home from './screens/HomeScreen';
 import About from './screens/About';
 import ProductDetail from './screens/ProductDetail';
 import CustomDrawer from './screens/CustomDrawer';
+import ProductForm from './screens/ProductForm';
 
 const {Navigator,Screen} = createDrawerNavigator()
 
@@ -29,6 +32,7 @@ export default function App() {
         <Screen name='home' component={Home}  />
         <Screen name='about' component={About} />
         <Screen name="details" component={ProductDetail} options={{drawerItemStyle : {height : 0}}} />
+        <Screen name='productForm' component={ProductForm}  options={{drawerItemStyle : {height : 0}}}/>
      
       </Navigator>
     </NavigationContainer>
